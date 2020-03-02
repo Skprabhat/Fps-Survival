@@ -14,9 +14,7 @@ public class Player : MonoBehaviour
     public float hungerDecreaseRate;
     public float thristDecreaseRate;
     [Space]
-    public GameObject inventory;
     bool isDead;
-    bool isInventoryEnabled;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,19 +34,7 @@ public class Player : MonoBehaviour
             hunger -= hungerDecreaseRate * Time.deltaTime;
             thrist -= thristDecreaseRate * Time.deltaTime;
         }
-        //Inventory Input
-        if(Input.GetKeyDown(KeyCode.I))
-        {
-            isInventoryEnabled = !isInventoryEnabled;
-        }
-        if(isInventoryEnabled==true)
-        {
-            inventory.SetActive(true);
-        }
-        else
-        {
-            inventory.SetActive(false);
-        }
+     
         //checking isplayer Dead
         if (health < maxHealth)
             Die();
