@@ -719,6 +719,11 @@ PrefabInstance:
       propertyPath: ShapeModule.radiusThickness
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 59083160253579114, guid: 8b40c87d8ef1e60429eefd5e33d439ee,
+        type: 3}
+      propertyPath: EmissionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 59083160253579117, guid: 8b40c87d8ef1e60429eefd5e33d439ee,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7026,6 +7031,26 @@ PrefabInstance:
         type: 3}
       propertyPath: SizeModule.curve.minScalar
       value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 59083160253579114, guid: 8b40c87d8ef1e60429eefd5e33d439ee,
+        type: 3}
+      propertyPath: EmissionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 59083160253579114, guid: 8b40c87d8ef1e60429eefd5e33d439ee,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.minMaxState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 59083160253579114, guid: 8b40c87d8ef1e60429eefd5e33d439ee,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.maxCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 59083160253579114, guid: 8b40c87d8ef1e60429eefd5e33d439ee,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.maxCurve.m_Curve.Array.data[1].value
+      value: 0.32432365
       objectReference: {fileID: 0}
     - target: {fileID: 59083160253579117, guid: 8b40c87d8ef1e60429eefd5e33d439ee,
         type: 3}
