@@ -11,11 +11,15 @@ public class Slot : MonoBehaviour,IPointerEnterHandler,IPointerDownHandler
     public Texture itemtexture;
     
     public GameObject item;
-        
+
+    private void Start()
+    {
+        empty = true;
+    }
     private void Update()
     {
         //Changing texture
-        if(item)
+        if (item)
         {
             itemtexture = item.GetComponent<Item>().itemTexture;
             this.GetComponent<RawImage>().texture = itemtexture;
@@ -28,8 +32,8 @@ public class Slot : MonoBehaviour,IPointerEnterHandler,IPointerDownHandler
         }
     }
 
-   
-  public void OnPointerDown(PointerEventData eventData)
+
+    public void OnPointerDown(PointerEventData eventData)
     {
         if(item)
         {

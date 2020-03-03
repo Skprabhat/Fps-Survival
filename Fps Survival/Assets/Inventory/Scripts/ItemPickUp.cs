@@ -9,7 +9,7 @@ public class ItemPickUp : MonoBehaviour
    
     void Start()
     {
-        
+        itemPickedUp = false;
     }
 
    
