@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+
 public class Slot : MonoBehaviour,IPointerEnterHandler,IPointerDownHandler
 {
     public bool empty;
@@ -12,10 +13,12 @@ public class Slot : MonoBehaviour,IPointerEnterHandler,IPointerDownHandler
     
     public GameObject item;
 
-    private void Start()
+    private void Awake()
     {
         empty = true;
+        gameObject.SetActive(false);
     }
+
     private void Update()
     {
         //Changing texture
