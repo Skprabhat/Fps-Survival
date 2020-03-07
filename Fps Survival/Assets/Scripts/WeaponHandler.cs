@@ -5,7 +5,8 @@ using UnityEngine;
 public class WeaponHandler : MonoBehaviour
 {
     public GameObject[] weapons;
-    GameObject currentWeapon;
+    [SerializeField]
+    public GameObject currentWeapon;
     int weaponNumber = 0;
     int previousWeapon;
     // Start is called before the first frame update

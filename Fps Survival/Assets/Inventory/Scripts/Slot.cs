@@ -10,13 +10,12 @@ public class Slot : MonoBehaviour,IPointerEnterHandler,IPointerDownHandler
     public bool empty;
     public Texture slottexture; 
     public Texture itemtexture;
-    
+    public WeaponHandler weaponhandler;
     public GameObject item;
 
     private void Awake()
     {
         empty = true;
-        gameObject.SetActive(false);
     }
 
     private void Update()
@@ -41,6 +40,7 @@ public class Slot : MonoBehaviour,IPointerEnterHandler,IPointerDownHandler
         if(item)
         {
             item.SetActive(true);
+            //weaponhandler.currentWeapon.gameObject.SetActive(false);
         }
     }
 

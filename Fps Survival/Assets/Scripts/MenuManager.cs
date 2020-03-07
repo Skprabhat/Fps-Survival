@@ -7,6 +7,10 @@ public class MenuManager : MonoBehaviour
     public GameObject pauseMenu;
     bool isPauseMenu;
     // Update is called once per frame
+    private void Awake()
+    {
+        pauseMenu.gameObject.SetActive(false);
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityStandardAssets.Characters.FirstPerson;
 public class Inventory : MonoBehaviour
 {
     public GameObject inventory;
@@ -26,9 +26,11 @@ public class Inventory : MonoBehaviour
         {
             inventory.SetActive(true);
             //Set the LockCursor to false
+           
         }
         else
         {
+           
             inventory.SetActive(false);
         }
     }
