@@ -7,6 +7,7 @@ public class WeaponHandler : MonoBehaviour
     public GameObject[] weapons;
     [SerializeField]
     public GameObject currentWeapon;
+    public Animator gunAnim;
     int weaponNumber = 0;
     int previousWeapon;
     // Start is called before the first frame update
@@ -36,5 +37,20 @@ public class WeaponHandler : MonoBehaviour
         currentWeapon = weapons[weaponNumber];
         weapons[weaponNumber].gameObject.SetActive(true);
         weapons[previousWeapon].gameObject.SetActive(false);
+        if(weapons[2])
+        {
+            gunAnimation();
+        }
+    }
+    void gunAnimation()
+    {
+        if (Input.GetMouseButton(1))
+        {
+            gunAnim.SetBool("isAiming", true);
+        }
+        if (Input.GetMouseButtonUp(1))
+        {
+            gunAnim.SetBool("isAiming", false);
+        }
     }
 }
