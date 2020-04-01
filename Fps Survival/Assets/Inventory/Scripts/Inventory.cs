@@ -47,7 +47,7 @@ public class Inventory : MonoBehaviour
     {
         GameObject rootitem;
         rootitem = item.GetComponent<ItemPickUp>().originalitem;
-        for (int i = 0; i < 9; i++)
+        for (int i = 0; i <9; i++)
         {
             if (slot[i].GetComponent<Slot>().empty == true && item.GetComponent<ItemPickUp>().itemPickedUp == false) //Checking if Already pickedUp or not
             {
@@ -57,6 +57,7 @@ public class Inventory : MonoBehaviour
                 Destroy(item);
             }
         }
+      
     }
 
     public void GetAllSlots()

@@ -52,7 +52,7 @@ public class AnimalAi : MonoBehaviour
             }
 
         }
-        if (Vector3.Distance(Player.position, this.transform.position) < 8)
+        if (Vector3.Distance(Player.position, this.transform.position) <6)
         {
             //Set Run animation false
             //Set Attack animation true

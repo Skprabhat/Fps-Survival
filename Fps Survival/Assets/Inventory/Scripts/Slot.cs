@@ -12,10 +12,12 @@ public class Slot : MonoBehaviour,IPointerEnterHandler,IPointerDownHandler
     public Texture itemtexture;
     public WeaponHandler weaponhandler;
     public GameObject item;
+    private GameObject player;
 
     private void Awake()
     {
         empty = true;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void Update()
@@ -49,4 +51,5 @@ public class Slot : MonoBehaviour,IPointerEnterHandler,IPointerDownHandler
 
     }
 
+  
 }

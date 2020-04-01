@@ -5,7 +5,11 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     public Texture itemTexture;
-   
+    public int id;
+    public string type;
+    public string description;
+
+  
     void Start()
     {
         
