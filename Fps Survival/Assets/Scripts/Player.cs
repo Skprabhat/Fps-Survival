@@ -44,6 +44,7 @@ public class Player : MonoBehaviour
         {
             health -= heathDecrease * Time.deltaTime;
         }
+       
     }
     void Die()
     {

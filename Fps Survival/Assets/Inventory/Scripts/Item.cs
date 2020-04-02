@@ -8,7 +8,7 @@ public class Item : MonoBehaviour
     public int id;
     public string type;
     public string description;
-
+   
   
     void Start()
     {
@@ -22,5 +22,6 @@ public class Item : MonoBehaviour
         {
             this.gameObject.SetActive(false);
         }
+      
     }
 }

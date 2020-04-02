@@ -8,6 +8,7 @@ public class WeaponHandler : MonoBehaviour
     [SerializeField]
     public GameObject currentWeapon;
     public Animator gunAnim;
+    public Animator swingAnim;
     int weaponNumber = 0;
     int previousWeapon;
     // Start is called before the first frame update
@@ -37,7 +38,11 @@ public class WeaponHandler : MonoBehaviour
         currentWeapon = weapons[weaponNumber];
         weapons[weaponNumber].gameObject.SetActive(true);
         weapons[previousWeapon].gameObject.SetActive(false);
-        if(weapons[2])
+        if(weapons[1])
+        {
+            SwingAnim();
+        }
+        if (weapons[2])
         {
             gunAnimation();
         }
@@ -51,6 +56,18 @@ public class WeaponHandler : MonoBehaviour
         if (Input.GetMouseButtonUp(1))
         {
             gunAnim.SetBool("isAiming", false);
+        }
+       
+    }
+    void SwingAnim()
+    {
+        if (Input.GetMouseButtonDown(0) && weapons[1].activeInHierarchy)
+        {
+            swingAnim.SetBool("swing", true);
+        }
+        if (Input.GetMouseButtonUp(0) && weapons[1].activeInHierarchy)
+        {
+            swingAnim.SetBool("swing", false);
         }
     }
 }

@@ -8,6 +8,8 @@ TagManager:
   - Slot
   - Water
   - Pearl
+  - terrain
+  - fox
   layers:
   - Default
   - TransparentFX

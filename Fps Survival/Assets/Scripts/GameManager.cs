@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class GameManager : MonoBehaviour
     private BoxCollider collider;
     private Vector3 piece_size;
     private Vector3 piece_centre;
+    public GameObject panel;
 
     public string folderName;
 
@@ -23,7 +25,9 @@ public class GameManager : MonoBehaviour
     public PuzzleInt puzzlePieces;
 
     private List<PuzzleInt> puzzleList = new List<PuzzleInt>();
+    //private List<PuzzleInt> _puzzleList = new List<PuzzleInt>();
     private List<Vector3> puzzlePos = new List<Vector3>();
+   // private List<Vector3> _puzzlePos = new List<Vector3>();
     private List<int> randomNo = new List<int>();
 
     private void Start()
@@ -31,14 +35,13 @@ public class GameManager : MonoBehaviour
         PuzzleInist();
         PuzzleSet();
         ApplyMat();
-        MixPuzzle();
-
-
+         MixPuzzle();
+        
     }
     private void Update()
     {
         MovePuzzle();
-
+       
 
     }
     void PuzzleInist()
@@ -70,8 +73,12 @@ public class GameManager : MonoBehaviour
     }
     void MovePuzzle()
     {
+        
+       
         foreach (PuzzleInt puzzle in puzzleList)
         {
+            
+              
             puzzle.mov_amount = offset;
             if (puzzle.clicked)
             {
@@ -132,9 +139,25 @@ public class GameManager : MonoBehaviour
                     puzzle.go_right = true;
 
                 }
+               
 
             }
+            
         }
+        
+        if (
+            (puzzleList[0].transform.position.x == -3.55f && puzzleList[0].transform.position.y == 1.77f && puzzleList[0].transform.position.z == 0) &&
+                (puzzleList[1].transform.position.x == -1.52f && puzzleList[1].transform.position.y == 1.77f && puzzleList[1].transform.position.z == 0) &&
+                (puzzleList[2].transform.position.x == 0.51f && puzzleList[2].transform.position.y == 1.77f && puzzleList[2].transform.position.z == 0) &&
+                (puzzleList[3].transform.position.x == -3.55f && puzzleList[3].transform.position.y == 1.77f - 2f && puzzleList[3].transform.position.z == 0f)   &&
+                //(puzzleList[4].transform.position.x == -3.55f + 2.03f && puzzleList[4].transform.position.y ==  - 0.23f && puzzleList[4].transform.position.z == 0)//&&
+                (puzzleList[5].transform.position.x == (-3.55f + (2 * 2.03f)) && puzzleList[5].transform.position.y == 1.77f - 2f && puzzleList[5].transform.position.z == 0) &&
+                (puzzleList[6].transform.position.x == -3.55f && puzzleList[6].transform.position.y == -2.23f && puzzleList[6].transform.position.z == 0) &&
+                (puzzleList[7].transform.position.x == -1.52f && puzzleList[7].transform.position.y == -2.23f && puzzleList[7].transform.position.z == 0))
+        {
+            panel.SetActive(true);
+        }
+
     }
 
     void ApplyMat()
@@ -142,16 +165,10 @@ public class GameManager : MonoBehaviour
         string filePath;
         for (int i = 1; i <= puzzleList.Count; i++)
         {
-            //if(i > 2)
-            //{
-            //    filePath = "/Puzzle" + folderName + "/Cube" + (i+1);
+           
+            filePath =  folderName + "/cube" + i;
 
-            //}
-            //else
-            //{
-            filePath =  folderName+i;
-
-            //  }
+     
 
             Texture2D mat = Resources.Load(filePath, typeof(Texture2D)) as Texture2D;
             puzzleList[i - 1].GetComponent<Renderer>().material.mainTexture = mat;
@@ -160,10 +177,13 @@ public class GameManager : MonoBehaviour
     }
     void MixPuzzle()
     {
+      //  puzzleList = _puzzleList;
+
         int number;
         foreach(PuzzleInt p in puzzleList )
         {
-            puzzlePos.Add(p.transform.position);
+            puzzlePos.Add(p.transform.position);                //puzzlePos filled with default pos
+            
         }
         foreach(PuzzleInt p in puzzleList )
         {
@@ -176,6 +196,10 @@ public class GameManager : MonoBehaviour
             }
             randomNo.Add(number);
             p.transform.position = puzzlePos[number];
+
         }
+       
+
     }
+  
 }
