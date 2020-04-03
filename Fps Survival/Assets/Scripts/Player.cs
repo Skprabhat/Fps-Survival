@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    private Vector3 Playerpostoget;
+
+
     [Header("Player")]
     public float maxHealth;
     public float maxHunger;
@@ -44,7 +47,7 @@ public class Player : MonoBehaviour
         {
             health -= heathDecrease * Time.deltaTime;
         }
-       
+        Playerpostoget =new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
     }
     void Die()
     {

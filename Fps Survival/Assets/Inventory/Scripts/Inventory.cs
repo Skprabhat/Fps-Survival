@@ -10,7 +10,11 @@ public class Inventory : MonoBehaviour
     private Transform[] slot;
     public GameObject slotHolder;
     private bool itemPickedUp;
-    
+
+    private void Awake()
+    {
+        inventory.SetActive(false);
+    }
     void Start()
     {
         GetAllSlots();
@@ -28,9 +32,8 @@ public class Inventory : MonoBehaviour
             //Set the LockCursor to false
            
         }
-        else
+      if(isInventoryEnabled==false)
         {
-           
             inventory.SetActive(false);
         }
     }

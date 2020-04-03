@@ -11,7 +11,7 @@ public class ItemPickUp : MonoBehaviour
     {
         itemPickedUp = false;
     }
-
+    
    
     void Update()
     {

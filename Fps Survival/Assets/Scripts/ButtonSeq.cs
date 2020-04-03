@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ButtonSeq : MonoBehaviour
 {
     private int c = 0;
     private int a = 0;
     private int b = 0;
+
 
 
     public GameObject cube;
@@ -60,14 +62,17 @@ public class ButtonSeq : MonoBehaviour
         if(a == 3)
         {
             cube.SetActive(true);
+               
         }
+       
         if(b == 3)
         {
             buttonA.SetActive(false);
             buttonB.SetActive(false);
             buttonC.SetActive(false);
-
+            
         }
+        
     }
 }
 
